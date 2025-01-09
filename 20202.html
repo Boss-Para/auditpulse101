@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Share Webpage</title>
+ <style>
+   body {
+     background-color: lightblue;
+     color: #fff;
+     font-family: sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+   }
+
+   .container {
+     background-color: #333;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     width: 300px;
+     text-align: center;
+   }
+
+   h2 {
+     margin: 0 0 10px 0;
+   }
+
+   p {
+     margin: 0 0 20px 0;
+   }
+
+   input {
+     width: calc(100% - 20px);
+     padding: 10px;
+     border: 1px solid #555;
+     border-radius: 3px;
+     background-color: #444;
+     color: #fff;
+     margin-bottom: 10px;
+   }
+
+   button {
+     padding: 10px 20px;
+     border: none;
+     border-radius: 3px;
+     color: #fff;
+     cursor: pointer;
+     transition: background-color 0.3s;
+   }
+
+   #ok-button {
+     background-color: #4CAF50;
+   }
+
+   #ok-button:hover {
+     background-color: #45a049;
+   }
+
+   #cancel-button {
+     background-color: #f44336;
+   }
+
+   #cancel-button:hover {
+     background-color: #e53935;
+   }
+
+   .close {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     cursor: pointer;
+     color: #fff;
+   }
+ </style>
+</head>
+<body>
+ <div class="container">
+   <span class="close">X</span>
+   <h2>Share Webpage</h2>
+   <p>Please enter the webpage address:</p>
+   <input type="text" id="webpage-address" placeholder="Input webpage address here">
+   <button id="ok-button">OK</button>
+   <button id="cancel-button">Cancel</button>
+ </div>
+ <script>
+   const closeButton = document.querySelector('.close');
+   const okButton = document.getElementById('ok-button');
+   const cancelButton = document.getElementById('cancel-button');
+
+   closeButton.addEventListener('click', () => {
+     document.querySelector('.container').style.display = 'none';
+   });
+
+   okButton.addEventListener('click', () => {
+     const address = document.getElementById('webpage-address').value;
+     alert(`Webpage address submitted: ${address}`);
+   });
+
+   cancelButton.addEventListener('click', () => {
+     document.getElementById('webpage-address').value = '';
+   });
+ </script>
+</body>
+</html>
